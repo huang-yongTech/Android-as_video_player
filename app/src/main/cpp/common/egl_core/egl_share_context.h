@@ -5,23 +5,26 @@
 
 class EglShareContext {
 public:
-	~EglShareContext() {
-	}
-	static EGLContext getSharedContext() {
-		if (instance_->sharedDisplay == EGL_NO_DISPLAY){
-			instance_->init();
-		}
-		return instance_->sharedContext;
-	}
+    ~EglShareContext() {
+    }
+
+    static EGLContext getSharedContext() {
+        if (instance_->sharedDisplay == EGL_NO_DISPLAY) {
+            instance_->init();
+        }
+        return instance_->sharedContext;
+    }
+
 protected:
-	EglShareContext();
-	void init();
+    EglShareContext();
+
+    void init();
 
 
 private:
-	static EglShareContext* instance_;
-	EGLContext sharedContext;
-	EGLDisplay sharedDisplay;
+    static EglShareContext *instance_;
+    EGLContext sharedContext;
+    EGLDisplay sharedDisplay;
 };
 
 #endif

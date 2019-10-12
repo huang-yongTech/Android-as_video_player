@@ -8,11 +8,14 @@
 #include <EGL/eglext.h>
 #include <KHR/khrplatform.h>
 
-typedef EGLBoolean (EGLAPIENTRYP PFNEGLPRESENTATIONTIMEANDROIDPROC)(EGLDisplay display, EGLSurface surface, khronos_stime_nanoseconds_t time);
+typedef EGLBoolean (EGLAPIENTRYP PFNEGLPRESENTATIONTIMEANDROIDPROC)(EGLDisplay display,
+                                                                    EGLSurface surface,
+                                                                    khronos_stime_nanoseconds_t time);
 
 class EGLCore {
 public:
-	EGLCore();
+    EGLCore();
+
     virtual ~EGLCore();
 
     bool init();
@@ -21,7 +24,8 @@ public:
 
     bool initWithSharedContext();
 
-  	EGLSurface createWindowSurface(ANativeWindow* _window);
+    EGLSurface createWindowSurface(ANativeWindow *_window);
+
     EGLSurface createOffscreenSurface(int width, int height);
 
     bool makeCurrent(EGLSurface eglSurface);
@@ -35,17 +39,21 @@ public:
     int setPresentationTime(EGLSurface surface, khronos_stime_nanoseconds_t nsecs);
 
     void releaseSurface(EGLSurface eglSurface);
+
     void release();
 
     EGLContext getContext();
+
     EGLDisplay getDisplay();
+
     EGLConfig getConfig();
 
 private:
-	EGLDisplay display;
-	EGLConfig config;
-	EGLContext context;
+    EGLDisplay display;
+    EGLConfig config;
+    EGLContext context;
 
-	PFNEGLPRESENTATIONTIMEANDROIDPROC pfneglPresentationTimeANDROID;
+    PFNEGLPRESENTATIONTIMEANDROIDPROC pfneglPresentationTimeANDROID;
 };
+
 #endif // ANDROID_EGL_CORE_H_

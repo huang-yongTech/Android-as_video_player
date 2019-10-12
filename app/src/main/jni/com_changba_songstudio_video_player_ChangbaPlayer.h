@@ -9,18 +9,25 @@ extern "C" {
 #endif
 
 /* for test */
-JNIEXPORT jint JNICALL Java_com_changba_songstudio_video_player_ChangbaPlayer_getdemuxedbuffer(JNIEnv *,jobject, jbyteArray);
+JNIEXPORT jint JNICALL
+Java_com_changba_songstudio_video_player_ChangbaPlayer_getdemuxedbuffer(JNIEnv *, jobject,
+                                                                        jbyteArray);
 
-JNIEXPORT void JNICALL Java_com_changba_songstudio_video_player_ChangbaPlayer_onSurfaceCreated(JNIEnv * env, jobject obj, jobject surface);
+JNIEXPORT void JNICALL
+Java_com_changba_songstudio_video_player_ChangbaPlayer_onSurfaceCreated(JNIEnv *env, jobject obj,
+                                                                        jobject surface);
 
-JNIEXPORT void JNICALL Java_com_changba_songstudio_video_player_ChangbaPlayer_onSurfaceDestroyed(JNIEnv * env, jobject obj, jobject surface);
+JNIEXPORT void JNICALL
+Java_com_changba_songstudio_video_player_ChangbaPlayer_onSurfaceDestroyed(JNIEnv *env, jobject obj,
+                                                                          jobject surface);
 /*
  * Class:     com_changba_songstudio_video_player_ChangbaPlayer
  * Method:    prepare
  * Signature: (Ljava/lang/String;[IIIFFII)Z
  */
 JNIEXPORT jboolean JNICALL Java_com_changba_songstudio_video_player_ChangbaPlayer_prepare
-  (JNIEnv *, jobject, jstring, jintArray, jint, jint, jboolean, jfloat, jfloat, jint, jint, jobject);
+        (JNIEnv *, jobject, jstring, jintArray, jint, jint, jboolean, jfloat, jfloat, jint, jint,
+         jobject);
 
 /*
  * Class:     com_changba_songstudio_video_player_ChangbaPlayer
@@ -28,7 +35,7 @@ JNIEXPORT jboolean JNICALL Java_com_changba_songstudio_video_player_ChangbaPlaye
  * Signature: ()V
  */
 JNIEXPORT void JNICALL Java_com_changba_songstudio_video_player_ChangbaPlayer_pause
-  (JNIEnv *, jobject);
+        (JNIEnv *, jobject);
 
 /*
  * Class:     com_changba_songstudio_video_player_ChangbaPlayer
@@ -36,7 +43,7 @@ JNIEXPORT void JNICALL Java_com_changba_songstudio_video_player_ChangbaPlayer_pa
  * Signature: ()V
  */
 JNIEXPORT void JNICALL Java_com_changba_songstudio_video_player_ChangbaPlayer_play
-  (JNIEnv *, jobject);
+        (JNIEnv *, jobject);
 
 /*
  * Class:     com_changba_songstudio_video_player_ChangbaPlayer
@@ -44,7 +51,7 @@ JNIEXPORT void JNICALL Java_com_changba_songstudio_video_player_ChangbaPlayer_pl
  * Signature: ()V
  */
 JNIEXPORT void JNICALL Java_com_changba_songstudio_video_player_ChangbaPlayer_stop
-  (JNIEnv *, jobject);
+        (JNIEnv *, jobject);
 
 /*
  * Class:     com_changba_songstudio_video_player_ChangbaPlayer
@@ -52,7 +59,7 @@ JNIEXPORT void JNICALL Java_com_changba_songstudio_video_player_ChangbaPlayer_st
  * Signature: ()F
  */
 JNIEXPORT jfloat JNICALL Java_com_changba_songstudio_video_player_ChangbaPlayer_getBufferedProgress
-  (JNIEnv *, jobject);
+        (JNIEnv *, jobject);
 
 /*
  * Class:     com_changba_songstudio_video_player_ChangbaPlayer
@@ -60,7 +67,7 @@ JNIEXPORT jfloat JNICALL Java_com_changba_songstudio_video_player_ChangbaPlayer_
  * Signature: ()F
  */
 JNIEXPORT jfloat JNICALL Java_com_changba_songstudio_video_player_ChangbaPlayer_getPlayProgress
-  (JNIEnv *, jobject);
+        (JNIEnv *, jobject);
 
 /*
  * Class:     com_changba_songstudio_video_player_ChangbaPlayer
@@ -68,7 +75,7 @@ JNIEXPORT jfloat JNICALL Java_com_changba_songstudio_video_player_ChangbaPlayer_
  * Signature: (F)V
  */
 JNIEXPORT void JNICALL Java_com_changba_songstudio_video_player_ChangbaPlayer_seekToPosition
-  (JNIEnv *, jobject, jfloat);
+        (JNIEnv *, jobject, jfloat);
 
 /*
  * Class:     com_changba_songstudio_video_player_ChangbaPlayer
@@ -76,16 +83,16 @@ JNIEXPORT void JNICALL Java_com_changba_songstudio_video_player_ChangbaPlayer_se
  * Signature: (IIII)V
  */
 JNIEXPORT void JNICALL Java_com_changba_songstudio_video_player_ChangbaPlayer_resetRenderSize
-  (JNIEnv *, jobject, jint, jint, jint, jint);
+        (JNIEnv *, jobject, jint, jint, jint, jint);
 
 JNIEXPORT void JNICALL Java_com_changba_songstudio_video_player_ChangbaPlayer_seekCurrent
-  (JNIEnv *, jobject, jfloat);
+        (JNIEnv *, jobject, jfloat);
 
 JNIEXPORT void JNICALL Java_com_changba_songstudio_video_player_ChangbaPlayer_beforeSeekCurrent
-  (JNIEnv *, jobject);
+        (JNIEnv *, jobject);
 
 JNIEXPORT void JNICALL Java_com_changba_songstudio_video_player_ChangbaPlayer_afterSeekCurrent
-  (JNIEnv *, jobject);
+        (JNIEnv *, jobject);
 
 #ifdef __cplusplus
 }

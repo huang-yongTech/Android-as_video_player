@@ -22,11 +22,9 @@ public abstract class MediaCodecDecoderLifeCycle {
 			Log.d("problem", "manufacturer=" + manufacturer + " model=" + model);
 			if (MediaCodecDecoder.IsInAndriodHardwareBlacklist()){
 				ret = false;
-			} else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2) {
+			} else {
 				// 4.3
 				// MediaCodec under android 4.3+ seems to be very stable and fast
-				ret = true;
-			} else if (MediaCodecDecoder.IsInAndriodHardwareWhitelist()){
 				ret = true;
 			}
 		}
